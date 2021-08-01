@@ -1,4 +1,4 @@
-# testvue
+# GithubAPI
 
 ## Project setup
 ```
@@ -20,5 +20,8 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# ES6 functions
+## Project setup
+```
+yarn install
+```
