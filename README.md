@@ -1,6 +1,6 @@
 # GithubAPI
 
-## Project setup
+## Project instructions
 ```
 yarn install
 ```
@@ -15,13 +15,11 @@ yarn serve
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
-
 # ES6 functions
-## Project setup
+## Array.prototype.filter()
 ```
-yarn install
+state.githubCommits.filter( element => element.commit.message.includes(search))
 ```
+The filter() method creates a new array with all elements that pass the test. 
+In this case a new array was created. The new array consists of commits where the commit message matches the search input.
+
