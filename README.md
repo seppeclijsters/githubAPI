@@ -21,5 +21,14 @@ yarn build
 state.githubCommits.filter( element => element.commit.message.includes(search))
 ```
 The filter() method creates a new array with all elements that pass the test. 
-In this case a new array was created. The new array consists of commits where the commit message matches the search input.
+The new array consists of commits where the commit message matches the search input.
+
+## Array.prototype.sort()
+```
+state.githubData.sort(function (a, b) {
+    return new Date(b[order]) - new Date(a[order]);
+}); 
+```
+The sort() method sorts the elements of an array in place and returns the sorted array. 
+In this case the new array is sorted by date.
 
