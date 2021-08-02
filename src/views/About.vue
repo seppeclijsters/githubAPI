@@ -1,46 +1,38 @@
 <template>
   <div class="about">
     <div class="container commits">
-          <router-link class="back-button d-flex align-items-center" to="/"><img class="" alt="icon star" width="15" :src="require('@/assets/back.svg')">Go back</router-link>
-          <h1>{{ $route.params.id }} commits</h1>
-
-          <div class="search d-flex justify-content-between">
-            <div>Total commits <span class="commits__count">{{ countGithubCommits }}</span>  </div>
-            <input class="commits__search" type="text" v-model="search" placeholder="Search for commit..." @input="searchData()">
-          </div>
-          <!-- {{ search }} -->
-          <div class="row d-flex commit__title-container">
-            <div class="col-1">ID</div>
-            <div class="col-3">Author</div>
-            <div class="col-4">Message</div>
-            <div class="col-4">Link</div>
-          </div>
-        <div v-if="search == '' ">
-          <div class="row d-flex align-items-center commit__item" v-for="(githubCommit, index) in githubCommits" :key="githubCommit">
-            <div class="col-1">{{ index + 1 }}</div>
-            <div class="col-3">{{ githubCommit.commit.committer.name }}</div>
-            <div class="col-4">{{ githubCommit.commit.message }}</div>
-            <div class="col-4"><a class="btn btn-primary" :href="githubCommit.html_url" target="_blank"> Bekijk commit </a></div>
-          </div>
+      <router-link class="back-button d-flex align-items-center" to="/"><img class="" alt="icon star" width="15" :src="require('@/assets/back.svg')">Go back</router-link>
+      <h1>{{ $route.params.id }} commits</h1>
+      <div class="search d-flex justify-content-between">
+        <div>Total commits <span class="commits__count">{{ countGithubCommits }}</span>  </div>
+        <input class="commits__search" type="text" v-model="search" placeholder="Search for commit..." @input="searchData()">
+      </div>
+      <div class="row d-flex commit__title-container">
+        <div class="col-1">ID</div>
+        <div class="col-3">Author</div>
+        <div class="col-4">Message</div>
+        <div class="col-4">Link</div>
+      </div>
+      <div v-if="search == '' ">
+        <div class="row d-flex align-items-center commit__item" v-for="(githubCommit, index) in githubCommits" :key="githubCommit">
+          <div class="col-1">{{ index + 1 }}</div>
+          <div class="col-3">{{ githubCommit.commit.committer.name }}</div>
+          <div class="col-4">{{ githubCommit.commit.message }}</div>
+          <div class="col-4"><a class="btn btn-primary" :href="githubCommit.html_url" target="_blank"> Bekijk commit </a></div>
         </div>
-        <div v-else>
-            <div v-if="searchGithubCommits == '' ">
-              Sorry, no results found.
-              </div>
-
-          <div class="row d-flex align-items-center commit__item" v-for="(githubCommit, index) in searchGithubCommits" :key="githubCommit">
-            <div class="col-1">{{ index + 1 }}</div>
-            <div class="col-3">{{ githubCommit.commit.committer.name }}</div>
-            <div class="col-4">{{ githubCommit.commit.message }}</div>
-            <div class="col-4"><a class="btn btn-primary" :href="githubCommit.html_url" target="_blank"> Bekijk commit </a></div>
-          </div>
+      </div>
+      <div v-else>
+        <div v-if="searchGithubCommits == '' ">
+          Sorry, no results found.
         </div>
-        
-        
- 
+        <div class="row d-flex align-items-center commit__item" v-for="(githubCommit, index) in searchGithubCommits" :key="githubCommit">
+          <div class="col-1">{{ index + 1 }}</div>
+          <div class="col-3">{{ githubCommit.commit.committer.name }}</div>
+          <div class="col-4">{{ githubCommit.commit.message }}</div>
+          <div class="col-4"><a class="btn btn-primary" :href="githubCommit.html_url" target="_blank"> Bekijk commit </a></div>
+        </div>
+      </div>
     </div>
-   
-
   </div>
 </template>
 
@@ -104,7 +96,6 @@ export default {
 .back-button {
   display: inline-block;
   text-decoration: unset;
-  // border-bottom: 1px solid red;
   color: black;
 }
 
@@ -113,7 +104,6 @@ export default {
 }
 
 .commit__title-container {
-  // background-color: #3E78FD;
   padding: 30px 0;
   border-radius: .4rem;
 }
@@ -130,7 +120,6 @@ h1 {
 }
 
 .commits {
-
     & .commits__count {
         background-color: #0d6efd4d;
         color: white;

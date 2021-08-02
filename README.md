@@ -1,6 +1,14 @@
-# GithubAPI
+# Project description
 
-## Project instructions
+Details project
+- Sort repositiories alphabetically, by stars, by forks or by last updated
+- Filter commits by search
+- CSS Preprocessors: SASS
+- State management with Vuex
+
+# Project instruction
+
+## Project setup
 ```
 yarn install
 ```

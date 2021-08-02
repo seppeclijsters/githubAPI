@@ -94,7 +94,6 @@ export default {
 
   & .respository__item {
     margin-right: 10px;
-    background-color: #0d6efd4d;
     background-color: #0d6efd14;
     padding: 3px 10px;
     border-radius: 5px;
